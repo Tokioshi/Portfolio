@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #252734;
+}
+
+nav {
+  background-color: #ffaf27;
+  border-radius: 0 0 60px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  font-family: "Inter", sans-serif;
+}
+nav h1 {
+  font-size: 24px;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  padding: 0 10px;
+  list-style-type: none;
+}
+nav ul li a {
+  color: black;
+  font-size: 18px;
+}
+
+#hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+  font-family: "Inter", sans-serif;
+}
+#hero .bold {
+  font-weight: 600;
+}
+#hero .text {
+  width: 550px;
+  height: auto;
+  color: #ffffff;
+}
+#hero .text h1,
+#hero .text h2 {
+  font-weight: 400;
+  font-size: 36px;
+}
+#hero .text P {
+  font-size: 20px;
+}
+#hero .buttons {
+  margin-top: 20px;
+}
+#hero .buttons .button {
+  background-color: #ffaf27;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=styles.css.map */
