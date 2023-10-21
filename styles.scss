@@ -46,19 +46,37 @@ nav {
 }
 
 #hero {
-  //   background-color: #252734;
-  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh; //Full screen display
   font-family: $inter;
   .bold {
     font-weight: 600;
   }
 
   .text {
-    width: 500px;
+    width: 550px;
+    height: auto;
     color: $white;
     h1,
     h2 {
       font-weight: 400;
+      font-size: 36px;
+    }
+    P {
+      font-size: 20px;
+    }
+  }
+
+  .buttons {
+    margin-top: 20px;
+    .button {
+      background-color: $yellow;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: black;
     }
   }
 }

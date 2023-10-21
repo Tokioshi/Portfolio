@@ -37,17 +37,35 @@ nav ul li a {
 }
 
 #hero {
-  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
   font-family: "Inter", sans-serif;
 }
 #hero .bold {
   font-weight: 600;
 }
 #hero .text {
-  width: 500px;
+  width: 550px;
+  height: auto;
   color: #ffffff;
 }
 #hero .text h1,
 #hero .text h2 {
   font-weight: 400;
+  font-size: 36px;
+}
+#hero .text P {
+  font-size: 20px;
+}
+#hero .buttons {
+  margin-top: 20px;
+}
+#hero .buttons .button {
+  background-color: #ffaf27;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: black;
 }/*# sourceMappingURL=styles.css.map */
