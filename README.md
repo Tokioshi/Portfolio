@@ -1,6 +1,6 @@
 # Portofolio
 
-Welcome to my portfolio website! Here you can find information about me, my skills, and my projects.
+Welcome to my portfolio website! Here you can find information about me and my skills.
 
 ## About Me
 

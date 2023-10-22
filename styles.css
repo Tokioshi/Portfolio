@@ -36,36 +36,70 @@ nav ul li a {
   font-size: 18px;
 }
 
-#hero {
+#home {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 90vh;
   font-family: "Inter", sans-serif;
 }
-#hero .bold {
+#home .bold {
   font-weight: 600;
 }
-#hero .text {
+#home .text {
   width: 550px;
   height: auto;
   color: #ffffff;
 }
-#hero .text h1,
-#hero .text h2 {
+#home .text h1,
+#home .text h2 {
   font-weight: 400;
   font-size: 36px;
 }
-#hero .text P {
+#home .text P {
   font-size: 20px;
 }
-#hero .buttons {
+#home .buttons {
   margin-top: 20px;
 }
-#hero .buttons .button {
+#home .buttons .button {
   background-color: #ffaf27;
   padding: 10px 20px;
   border-radius: 50px;
   text-decoration: none;
   color: black;
+}
+
+#about-me {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+}
+#about-me .text {
+  color: #ffffff;
+  border-left: 3px solid #ffaf27;
+  padding-left: 16px;
+  width: 550px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#about-me .text .bold {
+  font-weight: 600;
+}
+#about-me .text h1 {
+  font-weight: 400;
+}
+
+#contact {
+  font-family: "Inter", sans-serif;
+}
+#contact .bold {
+  font-weight: 600;
+}
+#contact h1 {
+  color: #ffffff;
+  font-weight: 400;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

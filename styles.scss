@@ -6,7 +6,6 @@
   padding: 0;
   text-decoration: none;
   scroll-behavior: smooth;
-  //   font-family: Arial, Helvetica, sans-serif;
 }
 
 // Default Variable
@@ -45,7 +44,7 @@ nav {
   }
 }
 
-#hero {
+#home {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -78,5 +77,39 @@ nav {
       text-decoration: none;
       color: black;
     }
+  }
+}
+
+#about-me {
+  font-family: $inter;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+  .text {
+    color: $white;
+    border-left: 3px solid $yellow;
+    padding-left: 16px;
+    width: 550px;
+    height: fit-content;
+    .bold {
+      font-weight: 600;
+    }
+
+    h1 {
+      font-weight: 400;
+    }
+  }
+}
+
+#contact {
+  font-family: $inter;
+  .bold {
+    font-weight: 600;
+  }
+  h1 {
+    color: $white;
+    font-weight: 400;
+    text-align: center;
   }
 }
