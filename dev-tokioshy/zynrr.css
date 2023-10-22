@@ -1,0 +1,50 @@
+body {
+  background-color: #252734;
+}
+
+#contact {
+  font-family: "Inter", sans-serif;
+}
+#contact .bold {
+  font-weight: 600;
+}
+#contact .title {
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+#contact .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+}
+#contact .container form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+#contact .container form input {
+  padding: 10px;
+  margin: 0 0 10px;
+  border-radius: 10px;
+}
+#contact .container form input[name=message] {
+  height: 150px;
+}
+#contact .container form input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+#contact .container form input[type=submit] {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #ffaf27;
+  border: none;
+  border-radius: 30px;
+  margin: 0;
+}
+#contact .container .details {
+  color: white;
+}/*# sourceMappingURL=zynrr.css.map */

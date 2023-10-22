@@ -1,0 +1,54 @@
+$inter: "Inter", sans-serif;
+
+body {
+  background-color: #252734;
+}
+
+#contact {
+  font-family: $inter;
+  .bold {
+    font-weight: 600;
+  }
+  .title {
+    color: white;
+    font-weight: 400;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      input {
+        padding: 10px;
+        margin: 0 0 10px;
+        border-radius: 10px;
+
+        &[name="message"] {
+          height: 150px;
+        }
+
+        &[type="number"] {
+          appearance: textfield;
+        }
+
+        &[type="submit"] {
+          width: fit-content;
+          background-color: #ffaf27;
+          border: none;
+          border-radius: 30px;
+          margin: 0;
+        }
+      }
+    }
+
+    .details {
+        color: white;
+    }
+  }
+}
