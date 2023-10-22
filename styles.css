@@ -159,4 +159,25 @@ nav ul li a {
   border-radius: 10px;
   text-decoration: none;
   color: black;
+}
+
+#top-btn {
+  background-color: #ffaf27;
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  padding: 10px 13px;
+  border-radius: 15px;
+  font-size: 36px;
+  cursor: pointer;
+}
+#top-btn:hover {
+  background-color: #F39900;
+}
+#top-btn i {
+  color: #ffffff;
 }/*# sourceMappingURL=styles.css.map */
