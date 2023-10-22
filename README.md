@@ -11,6 +11,7 @@ I am a passionate developer with experience in web development and programming. 
 - HTML
 - CSS
 - SCSS
+- TailwindCSS
 - JavaScript
 
 Thank you for visiting my portfolio website!
