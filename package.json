@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.5"
   },
   "name": "portofolio",
   "description": "Welcome to my portfolio website! Here you can find information about me and my skills.",
