@@ -1,4 +1,3 @@
-/* ===== Content: edit these lists to update the site ===== */
 const projects = [
     {
         name: "Leteshia",
@@ -44,17 +43,20 @@ const projects = [
     },
 ];
 const stack = ["JavaScript", "TypeScript", "PHP", "CSS", "Discord.js", "Cloudflare Workers", "CI4"];
-const langColor = { JavaScript: "#f1e05a", TypeScript: "#3178c6", PHP: "#4F5D95", CSS: "#563d7c" };
+const langColor = {
+    JavaScript: "#f1e05a",
+    TypeScript: "#3178c6",
+    PHP: "#4F5D95",
+    CSS: "#563d7c",
+};
 const roles = ["Discord bots", "web tools", "serverless bots", "things in TypeScript"];
 const email = "Tokioshy@pm.me";
 
-/* ===== Helpers ===== */
 const $ = (s) => document.querySelector(s);
 const root = document.documentElement;
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-/* ===== Theme ===== */
 function toggleTheme() {
     const dark = root.classList.toggle("dark");
     try {
@@ -64,21 +66,42 @@ function toggleTheme() {
 }
 $("#theme").addEventListener("click", toggleTheme);
 
-/* ===== Mobile menu ===== */
 const menu = $("#menu"),
     burger = $("#burger");
-burger.addEventListener("click", () => {
-    const open = menu.classList.toggle("hidden") === false;
+const burgerLines = burger.querySelectorAll("[data-burger-line]");
+function setMenuOpen(open) {
+    menu.classList.toggle("max-h-64", open);
+    menu.classList.toggle("max-h-0", !open);
+    menu.classList.toggle("translate-y-0", open);
+    menu.classList.toggle("-translate-y-2", !open);
+    menu.classList.toggle("opacity-100", open);
+    menu.classList.toggle("opacity-0", !open);
+    menu.classList.toggle("pointer-events-auto", open);
+    menu.classList.toggle("pointer-events-none", !open);
+    menu.inert = !open;
+    menu.setAttribute("aria-hidden", !open);
     burger.setAttribute("aria-expanded", open);
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    burgerLines[0].classList.toggle("translate-y-2", open);
+    burgerLines[0].classList.toggle("rotate-45", open);
+    burgerLines[1].classList.toggle("scale-x-0", open);
+    burgerLines[1].classList.toggle("opacity-0", open);
+    burgerLines[2].classList.toggle("-translate-y-2", open);
+    burgerLines[2].classList.toggle("-rotate-45", open);
+}
+burger.addEventListener("click", () => {
+    setMenuOpen(burger.getAttribute("aria-expanded") !== "true");
 });
 menu.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-        menu.classList.add("hidden");
-        burger.setAttribute("aria-expanded", false);
+    if (e.target.closest("a")) setMenuOpen(false);
+});
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && burger.getAttribute("aria-expanded") === "true") {
+        setMenuOpen(false);
+        burger.focus();
     }
 });
 
-/* ===== Scroll progress + nav background ===== */
 const bar = $("#bar"),
     nav = $("#nav");
 function onScroll() {
@@ -91,7 +114,6 @@ function onScroll() {
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-/* ===== Cursor glow ===== */
 if (finePointer && !reduced) {
     addEventListener(
         "pointermove",
@@ -103,7 +125,6 @@ if (finePointer && !reduced) {
     );
 }
 
-/* ===== Typed roles ===== */
 const typed = $("#typed");
 if (reduced) {
     typed.textContent = roles[0];
@@ -128,7 +149,6 @@ if (reduced) {
     })();
 }
 
-/* ===== Projects: render, filter, tilt ===== */
 const grid = $("#grid"),
     filters = $("#filters");
 const filterDefs = [
@@ -191,7 +211,6 @@ filters.addEventListener("click", (e) => {
 renderFilters();
 renderProjects();
 
-/* ===== Stack marquee ===== */
 const chips = stack
     .map(
         (s) =>
@@ -209,9 +228,7 @@ function updateStackMarquee() {
 
     track.style.setProperty("--marquee-loop-width", `${groupWidth}px`);
 
-    const groupCount = reduced
-        ? 1
-        : Math.ceil(marquee.clientWidth / groupWidth) + 1;
+    const groupCount = reduced ? 1 : Math.ceil(marquee.clientWidth / groupWidth) + 1;
     while (track.childElementCount < groupCount) {
         track.insertAdjacentHTML(
             "beforeend",
@@ -230,7 +247,6 @@ if (!reduced) {
     marqueeObserver.observe(track.firstElementChild);
 }
 
-/* ===== Scroll reveal ===== */
 const io = new IntersectionObserver(
     (entries) => {
         entries.forEach((en) => {
@@ -244,7 +260,6 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll("[data-reveal]:not(.in)").forEach((el) => io.observe(el));
 
-/* ===== Slash-command console ===== */
 const out = $("#out"),
     input = $("#cmdInput");
 function line(html, cls = "text-muted") {
@@ -270,10 +285,15 @@ const commands = {
         line(
             link(email, "mailto:" + email) +
                 "<br>" +
-                link("github.com/Tokioshi", "https://github.com/Tokioshi"),
+                link("github.com/Tokioshi", "https://github.com/Tokioshi") +
+                "<br>" +
+                link("linktr.ee/Tokioshy", "https://linktr.ee/Tokioshy"),
         ),
     theme: () => line("Theme set to " + (toggleTheme() ? "dark" : "light") + "."),
     clear: () => {
+        out.innerHTML = "";
+    },
+    cls: () => {
         out.innerHTML = "";
     },
 };
@@ -294,7 +314,6 @@ document
     .querySelectorAll("[data-cmd]")
     .forEach((b) => b.addEventListener("click", () => run(b.dataset.cmd)));
 
-/* ===== Copy email, footer year ===== */
 const copy = $("#copy");
 copy.addEventListener("click", async () => {
     try {
