@@ -35,8 +35,6 @@
             class="fixed left-0 top-0 z-[60] h-0.5 w-full origin-left scale-x-0 bg-accent"
         ></div>
         <div id="glow" class="pointer-events-none fixed inset-0 z-0"></div>
-
-        <!-- Navigation -->
         <header
             id="nav"
             class="fixed inset-x-0 top-0 z-50 border-b border-transparent backdrop-blur-md transition-colors"
@@ -86,22 +84,32 @@
                         aria-label="Open menu"
                         aria-expanded="false"
                         aria-controls="menu"
-                        class="grid h-10 w-10 place-items-center rounded-full border border-line bg-surface md:hidden"
+                        class="grid h-10 w-10 place-items-center rounded-full border border-line bg-surface transition hover:scale-105 hover:border-accent active:scale-95 md:hidden"
                     >
-                        <svg
-                            class="h-5 w-5"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                            viewBox="0 0 24 24"
-                        >
-                            <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
-                        </svg>
+                        <span class="relative h-5 w-5" aria-hidden="true">
+                            <span
+                                data-burger-line
+                                class="absolute left-0 top-[3px] h-0.5 w-5 rounded-full bg-current transition-all duration-300 ease-out motion-reduce:transition-none"
+                            ></span>
+                            <span
+                                data-burger-line
+                                class="absolute left-0 top-1/2 h-0.5 w-5 -translate-y-1/2 rounded-full bg-current transition-all duration-300 ease-out motion-reduce:transition-none"
+                            ></span>
+                            <span
+                                data-burger-line
+                                class="absolute bottom-[3px] left-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ease-out motion-reduce:transition-none"
+                            ></span>
+                        </span>
                     </button>
                 </div>
             </div>
-            <nav id="menu" class="hidden border-t border-line bg-bg/95 px-5 py-4 md:hidden">
-                <div class="flex flex-col gap-4 text-base font-medium">
+            <nav
+                id="menu"
+                aria-hidden="true"
+                inert
+                class="pointer-events-none max-h-0 -translate-y-2 overflow-hidden border-t border-line bg-bg/95 px-5 opacity-0 transition-[max-height,opacity,transform] duration-300 ease-out md:hidden motion-reduce:transition-none"
+            >
+                <div class="flex flex-col gap-4 py-4 text-base font-medium">
                     <a href="#about">About</a><a href="#projects">Projects</a
                     ><a href="#stack">Stack</a><a href="#contact">Contact</a>
                 </div>
@@ -109,7 +117,6 @@
         </header>
 
         <main id="top" class="relative z-10">
-            <!-- Hero -->
             <section class="relative overflow-hidden px-5 pb-20 pt-32 md:pt-40">
                 <div class="blob -left-20 top-10 h-72 w-72 bg-accent"></div>
                 <div
@@ -152,8 +159,6 @@
                             >
                         </div>
                     </div>
-
-                    <!-- Interactive slash-command console -->
                     <div
                         class="rise rounded-2xl border border-line bg-surface shadow-xl shadow-accent/10"
                         style="--d: 0.45s"
@@ -192,8 +197,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- About -->
             <section id="about" class="px-5 py-20">
                 <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-5">
                     <h2
@@ -220,8 +223,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Projects -->
             <section id="projects" class="px-5 py-20">
                 <div class="mx-auto max-w-6xl">
                     <div class="flex flex-wrap items-end justify-between gap-6">
@@ -249,8 +250,6 @@
                     >
                 </div>
             </section>
-
-            <!-- Stack -->
             <section id="stack" class="py-20">
                 <h2
                     data-reveal
@@ -262,8 +261,6 @@
                     <div id="track" class="marquee-track px-3"></div>
                 </div>
             </section>
-
-            <!-- Contact -->
             <section id="contact" class="px-5 py-24">
                 <div
                     data-reveal
@@ -273,7 +270,8 @@
                         Let's work together
                     </h2>
                     <p class="mx-auto mt-4 max-w-md text-lg text-muted">
-                        Looking for a developer, or a custom bot for your server? Send an email, or just join my Discord server.
+                        Looking for a developer, or a custom bot for your server? Send an email, or
+                        just join my Discord server.
                     </p>
                     <div class="mt-8 flex flex-wrap justify-center gap-3">
                         <a
