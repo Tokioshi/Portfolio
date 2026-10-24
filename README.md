@@ -41,7 +41,7 @@ To add a project, add an object to the `projects` array in `public/assets/main.j
 
 ```js
 { name: 'My Project', lang: 'JavaScript', type: 'bots', // 'bots' or 'web'
-  url: 'https://github.com/Tokioshi/My-Project', desc: 'Short description.' }
+  url: 'https://github.com/i46nScG/My-Project', desc: 'Short description.' }
 ```
 
 If you use a new language, add its color to `langColor` in the same file.
