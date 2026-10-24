@@ -3,43 +3,36 @@ const projects = [
         name: "Leteshia",
         lang: "JavaScript",
         type: "bots",
-        url: "https://github.com/Tokioshi/Leteshia",
+        url: "https://github.com/i46nScG/Leteshia",
         desc: "Utility and administration bot developed exclusively to support the operations of the Harmony Hub server.",
     },
     {
         name: "Kaede",
         lang: "JavaScript",
         type: "bots",
-        url: "https://github.com/Tokioshi/Kaede",
+        url: "https://github.com/i46nScG/Kaede",
         desc: "A versatile, feature-rich Discord bot framework with utilities for moderation, utility and entertainment.",
     },
     {
         name: "Reine",
         lang: "JavaScript",
         type: "bots",
-        url: "https://github.com/Tokioshi/Reine",
+        url: "https://github.com/i46nScG/Reine",
         desc: "A lightweight, serverless Discord bot built natively on Cloudflare Workers using HTTP Interactions.",
     },
     {
         name: "Yokobee",
         lang: "TypeScript",
         type: "bots",
-        url: "https://github.com/Tokioshi/Yokobee",
+        url: "https://github.com/i46nScG/Yokobee",
         desc: "A dedicated space for transitioning bot development workflows into TypeScript.",
     },
     {
-        name: "To-Do-List",
-        lang: "PHP",
+        name: "Little Notes",
+        lang: "TypeScript",
         type: "web",
-        url: "https://github.com/Tokioshi/To-Do-List",
-        desc: "A simple yet robust CRUD application for task management, built to demonstrate core web development skills.",
-    },
-    {
-        name: "CI4-Blog",
-        lang: "CSS",
-        type: "web",
-        url: "https://github.com/Tokioshi/CI4-Blog",
-        desc: "A simple content management system for blogging, with user authentication and content creation.",
+        url: "https://github.com/i46nScG/Little-Notes",
+        desc: "A quiet, private space for your thoughts. Create and manage notes saved locally on your device.",
     },
 ];
 const stack = ["JavaScript", "TypeScript", "PHP", "CSS", "Discord.js", "Cloudflare Workers", "CI4"];
@@ -285,7 +278,7 @@ const commands = {
         line(
             link(email, "mailto:" + email) +
                 "<br>" +
-                link("github.com/Tokioshi", "https://github.com/Tokioshi") +
+                link("github.com/i46nScG", "https://github.com/i46nScG") +
                 "<br>" +
                 link("linktr.ee/Tokioshy", "https://linktr.ee/Tokioshy"),
         ),
